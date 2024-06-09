@@ -1,16 +1,22 @@
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
+import style from "../index.module.css";
 
 function GamesPage() {
     return (
-        <div>
+        <>
             <Nav />
-            <h1>Games Page</h1>
+            <div className={style.gamesMainContainer}>
+                {/* {library.map((game) => (
+                    <div className={style.gameCard}>
+                        <h1>{game.name}</h1>
+                        <img src={game.background_image} alt={game.name} />
+                    </div>
+                ))} */}
+            </div>
             <Footer />
-        </div>
+        </>
     );
 }
 
 export default GamesPage;
-
-

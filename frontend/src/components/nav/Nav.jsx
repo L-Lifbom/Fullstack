@@ -1,13 +1,18 @@
 import './nav.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import style from './nav.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+
 
 function Nav() {
     return (
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/games">Games</Link>
-            <Link to="/account">Account</Link>
+        <nav className={style.navBar}>
+            <Link to="/games" className={style.navGames}><FontAwesomeIcon icon={faGamepad} /></Link>
+            <Link to="/" className={style.navHome}>Home</Link>
+            <Link to="/user" className={style.navUser}><FontAwesomeIcon icon={faUser} /></Link>
         </nav>
     );
 }

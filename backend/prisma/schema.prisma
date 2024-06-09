@@ -15,12 +15,23 @@ datasource db {
 
 model User {
   id  Int @id @default(autoincrement())
-  username String
   password String
   email String @unique
+  games    Game[]   @relation(references: [id])
 }
 
-// model Games {
-//   id 
-//   gametitle
-// }
+model Game {
+  id        Int      @id @default(autoincrement())
+  title     String
+  description String?
+  createdAt DateTime @default(now())
+  users     User[]   @relation(references: [id])
+}
+
+model UserGame {
+  userId  Int
+  gameId  Int
+  user    User @relation(fields: [userId], references: [id])
+  game    Game @relation(fields: [gameId], references: [id])
+  @@id([userId, gameId])
+}

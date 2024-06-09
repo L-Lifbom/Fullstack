@@ -1,0 +1,28 @@
+:root {
+
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: white;
+}
+
+.homeMainContainer, .gamesMainContainer, .userMainContainer {
+  height: 80vh;
+}
+
+.homeMainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeMainContainer h1 {
+  font-size: 4rem;
+}
+
