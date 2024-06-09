@@ -7,7 +7,7 @@ function HomePage() {
         <>
             <Nav />
             <div className={style.homeMainContainer}>
-                <h1>Welcome to The Library</h1>
+                <h1>Welcome to <br/><span>The Library</span></h1>
             </div>
             <Footer />
         </>

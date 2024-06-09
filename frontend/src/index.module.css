@@ -24,5 +24,34 @@
 
 .homeMainContainer h1 {
   font-size: 4rem;
+  text-align: center;
 }
 
+.homeMainContainer h1 span {
+  font-size: 6rem;
+}
+
+.gameCard {
+  width: 500px;
+  height: 300px;
+  background-color: red;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gameCard img {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gamesMainContainer {
+  margin: 5vw 0 0 5vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: center;
+  align-items: start;
+  /* height: auto; */
+}
