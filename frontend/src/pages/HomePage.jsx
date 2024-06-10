@@ -8,6 +8,7 @@ function HomePage() {
             <Nav />
             <div className={style.homeMainContainer}>
                 <h1>Welcome to <br/><span>The Library</span></h1>
+                <input type="text" placeholder="Find your next game" />
             </div>
             <Footer />
         </>

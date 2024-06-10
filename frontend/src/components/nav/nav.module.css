@@ -1,3 +1,5 @@
+@import '../../index.module.css'; 
+
 .navBar {
     display: flex;
     justify-content: space-around;
@@ -7,6 +9,10 @@
 .navGames, .navHome, .navUser {
     padding: 25px 0 0 0;
     text-decoration: none;
-    color: #000000;
+    color: var(--clr-light-2);
     font-size: 1.5rem;
+}
+
+.navBar img {
+    width: 60px;
 }
