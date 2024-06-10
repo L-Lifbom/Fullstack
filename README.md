@@ -10,7 +10,7 @@ This is a fullstack project that consists of a backend and a frontend. The backe
 - Node.js is necessary to run this project. Download here: https://nodejs.org/en/download/current
 - Clone this project to your preferred directory.
 - Create a .env file in the backend root directory with the necessary environment variables which consists of:
-  - RAWG: `API_KEY` https://rawg.io/apidocs
+  - RAWG: `GAME_API_KEY` https://rawg.io/apidocs
   - Render: `DATABASE_URL` https://render.com/
   - JWT: `JWT_SECRET` https://jwt.io
 - Navigate to the backend directory: `cd backend`
