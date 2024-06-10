@@ -5,11 +5,12 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "nodemon app.js",
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "L-Lifbom",
+  "license": "MIT",
   "dependencies": {
     "@prisma/client": "^5.14.0",
     "@types/bcrypt": "^5.0.2",

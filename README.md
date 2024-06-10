@@ -15,10 +15,10 @@ This is a fullstack project that consists of a backend and a frontend. The backe
   - JWT: `JWT_SECRET` https://jwt.io
 - Navigate to the backend directory: `cd backend`
 - Install the necessary dependencies: `npm install`
-- Start the backend server: `npm run dev`
+- Start the backend server: `npm start`
 - Open a new terminal and navigate to the frontend directory: `cd frontend`
 - Install the necessary dependencies: `npm install`
-- Start the frontend server: `npm run dev`
+- Start the frontend server: `npm start`
 - Open your browser and navigate to `http://localhost:5173`
 
 ## Usage
