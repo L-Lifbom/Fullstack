@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import styles from '../index.module.css';
 
 function SignUpIn( { onSignIn }) {
   const [signUp, setSignUp] = useState(false);
@@ -19,7 +20,7 @@ function SignUpIn( { onSignIn }) {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/users/', { email, password });
+      const response = await axios.post('http://localhost:3000/users/', { email: email.toLowerCase(), password });
       console.log('User created:', response.data);
       setUserId(response.data.id);
     } catch (error) {
@@ -30,9 +31,10 @@ function SignUpIn( { onSignIn }) {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/users/login`, { email, password });
+      const response = await axios.post(`http://localhost:3000/users/login`, { email: email.toLowerCase(), password });
       if (response.data && response.data.user) {
         console.log('Login successful:', response.data);
+        localStorage.setItem('token', response.data.token); // Store token in local storage
         onSignIn();
       } else {
         alert('Login failed: Invalid credentials.');
@@ -49,9 +51,9 @@ function SignUpIn( { onSignIn }) {
   };
 
   return (
-    <div>
+    <div className={styles.signContainer}>
       <h1>{signUp ? 'Sign Up' : 'Sign In'}</h1>
-      <form onSubmit={signUp ? handleSignUp : handleSignIn}>
+      <form onSubmit={signUp ? handleSignUp : handleSignIn} className={styles.signForm}>
         <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
         <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         {signUp && (

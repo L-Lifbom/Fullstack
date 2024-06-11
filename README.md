@@ -1,7 +1,7 @@
 # Fullstack
 
 ## Description
-This is a fullstack project that consists of a backend and a frontend. The backend is built with Node.js and Express and the frontend is built with Vite and React.
+This is a fullstack project that consists of a backend and a frontend. The backend is built with Node.js and Express.js and the frontend is built with Vite and React.
 
 ## Visuals
 ![Screenshot of Homepage](src/assets/Screenshot.png)
@@ -20,8 +20,6 @@ This is a fullstack project that consists of a backend and a frontend. The backe
 - Install the necessary dependencies: `npm install`
 - Start the frontend server: `npm start`
 - Open your browser and navigate to `http://localhost:5173`
-
-## Usage
 
 # Contact
 - Github: https://github.com/L-Lifbom

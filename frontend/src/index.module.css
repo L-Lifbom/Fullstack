@@ -18,32 +18,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: var(--clr-light-1);
+  background-color: var(--clr-dark-1);
+  color: var(--clr-light-1);
+}
+
+input {
   color: var(--clr-dark-1);
+  border-radius: var(--radius);
+  background-color: var(--clr-light-2);
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  outline: none;
 }
 
 .body {
 
 }
 
-.homeMainContainer, .gamesMainContainer, .userMainContainer {
+.gamesMainContainer, .homeMainContainer,  .userMainContainer {
   height: 80vh;
-}
-
-.homeMainContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.homeMainContainer h1 {
-  font-size: 4rem;
-  text-align: center;
-}
-
-.homeMainContainer h1 span {
-  font-size: 6rem;
 }
 
 .gamesMainContainer {
@@ -73,4 +67,39 @@
   justify-content: center;
   align-items: start;
   /* height: auto; */
+}
+
+.homeMainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.homeMainContainer h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.homeMainContainer h1 span {
+  font-size: 6rem;
+}
+
+.userMainContainer {
+
+}
+
+.signContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.signForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

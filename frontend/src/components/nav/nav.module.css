@@ -2,17 +2,42 @@
 
 .navBar {
     display: flex;
-    justify-content: space-around;
     height: 10vh;
+    position: relative;
+    justify-content: center;
+
 }
 
-.navGames, .navHome, .navUser {
-    padding: 25px 0 0 0;
+.navGames, .navUser, .hamburger {
+    padding: 35px 0 0 0;
     text-decoration: none;
     color: var(--clr-light-2);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
 }
+
+.navGames p, .navUser p, .hamburger p {
+    font-size: 1.2rem;
+    margin: 0 0 0 5px;
+}
+
+.navHome {
+    padding: 10px 0 0 0;
+}
+
 
 .navBar img {
     width: 60px;
+}
+
+.navLinks {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 10vw 0 0;
+    column-gap: 50px;
+    position: absolute;
+    right: 0;
 }
