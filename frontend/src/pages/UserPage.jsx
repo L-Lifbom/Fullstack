@@ -4,14 +4,39 @@ import Footer from "../components/footer/Footer";
 import SignUpIn from "../components/SignUpIn";
 import style from "../index.module.css";
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function UserPage() {
     const [signedIn, setSignedIn] = useState(false);
+    const [games, setGames] = useState([]);
+    const [email, setEmail] = useState('');
+
+    useEffect(() => {
+        if (signedIn) {
+            fetchUserGames();
+        }
+    }, [signedIn]);
+
+    const fetchUserGames = async () => {
+        try {
+            const response = await axios.get(`http://localhost:3000/games/user/${localStorage.getItem('userId')}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                },
+            });
+            setGames(response.data);
+
+        } catch (error) {
+            console.error('Error fetching games:', error);
+        }
+    };
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
             setSignedIn(true);
+            setEmail(localStorage.getItem('email'));
         }
     }, []);
 
@@ -40,13 +65,32 @@ function UserPage() {
         }
     }
 
+    const handleDeleteGame = async (gameId) => {
+        console.log('Does not work xD', gameId);
+    }
+
     return (
         <>
             <Nav />
             <div className={style.userMainContainer}>
                 {signedIn ? (
                     <div>
-                        <h1>User Profile</h1>
+                        <div className={style.userHeader}>
+                            <h1>User Profile</h1>
+                            <h2>Email: {email}</h2>
+                        </div>
+                        <ul className={style.userGamesList}>
+                            {games && games.length > 0 ? (
+                                games.map(game => (
+                                    <div key={game.id} className={style.userGamesItem}>
+                                        <li>{game.title}</li>
+                                        <FontAwesomeIcon icon={faTrash} onClick={() => handleDeleteGame(game.id)}/>
+                                    </div>
+                                ))
+                            ) : (
+                                <li>No games found</li>
+                            )}
+                        </ul>
                         <button onClick={handleLogout}>Log Out</button>
                         <button onClick={handleDelete}>Delete Account</button>
                     </div>

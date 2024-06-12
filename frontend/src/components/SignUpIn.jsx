@@ -34,7 +34,12 @@ function SignUpIn( { onSignIn }) {
       const response = await axios.post(`http://localhost:3000/users/login`, { email: email.toLowerCase(), password });
       if (response.data && response.data.user) {
         console.log('Login successful:', response.data);
+        console.log('Token:', response.data.token);
+        console.log('User ID:', response.data.user.id);
+        console.log('User Email:', response.data.user.email);
         localStorage.setItem('token', response.data.token); // Store token in local storage
+        localStorage.setItem('userId', response.data.user.id); // Store userId in local storage
+        localStorage.setItem('email', response.data.user.email); // Store email in local storage
         onSignIn();
       } else {
         alert('Login failed: Invalid credentials.');

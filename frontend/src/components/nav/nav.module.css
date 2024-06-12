@@ -18,6 +18,10 @@
     align-items: flex-end;
 }
 
+.navGames p:hover, .navUser p:hover, .hamburger p:hover {
+    color: var(--clr-red-1);
+}
+
 .navGames p, .navUser p, .hamburger p {
     font-size: 1.2rem;
     margin: 0 0 0 5px;

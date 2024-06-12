@@ -17,6 +17,7 @@ export function auth(req, res, next) {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
+      console.error('Error verifying token:', err);
       return res.sendStatus(403);
     }
 

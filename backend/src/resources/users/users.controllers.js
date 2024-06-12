@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 const saltRounds = 10;
@@ -77,7 +78,8 @@ export const loginUser = async (req, res) => {
         if (!isMatch) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
-        res.json({ message: 'Login successful', user });
+        const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.json({ message: 'Login successful', user, token });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

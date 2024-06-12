@@ -22,11 +22,33 @@ function GamesPage() {
         }
     };
     const saveGameToDatabase = async (game) => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Please log in to save games.');
+            return;
+        }
+        const userId = parseInt(localStorage.getItem('userId'));
+        if (!userId) {
+            console.error('User ID is null');
+            return;
+        }
         try {
-            const response = await axios.post('http://localhost:3000/games/save', game);
+            const gameData = {
+                userId,
+                gameId: game.id,
+                title: game.name,
+                description: game.description
+            };
+            console.log('Token:', token);
+            console.log('Game Data:', gameData);
+            const response = await axios.post('http://localhost:3000/games/save', gameData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             console.log(response);
         } catch (error) {
-            console.error('Error saving game to database:', error);
+            console.error('Error saving game to database:', error.response ? error.response.data : error);
         }
     };
 

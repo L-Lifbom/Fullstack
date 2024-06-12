@@ -18,7 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: var(--clr-dark-1);
+  background-color: var(--clr-dark-2);
   color: var(--clr-light-1);
 }
 
@@ -85,8 +85,41 @@ input {
   font-size: 6rem;
 }
 
+.homeMainContainer input {
+  padding: 0 50px 0 100px;
+  font-size: 1.6rem;
+  border-radius: 5rem;
+  width: 700px;
+  height: 100px;
+}
+
 .userMainContainer {
 
+}
+
+.userHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+}
+
+.userGamesList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--clr-grey-2);
+  row-gap: 10px;
+  height: 50vh;
+  width: 50vw;
+}
+
+.userGamesItem {
+  width: 10vw;
+  display: flex;
+  cursor: pointer;
+  margin: 0 0 0 20vw;
+  list-style-type: none;
 }
 
 .signContainer {
