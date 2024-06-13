@@ -39,7 +39,6 @@ function GamesPage() {
                 title: game.name,
                 description: game.description
             };
-            console.log('Token:', token);
             console.log('Game Data:', gameData);
             const response = await axios.post('http://localhost:3000/games/save', gameData, {
                 headers: {
