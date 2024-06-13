@@ -4,10 +4,10 @@
   "description": "This is a fullstack project that consists of a backend and a frontend. The backend is built with Node.js and Express.js and the frontend is built with Vite and React.",
   "scripts": {
     "build:backend": "cd backend && npm install && npx prisma generate && npx prisma migrate deploy",
-    "build:frontend": "cd frontend && npm install && npm run build",
-    "build": "npm run build:backend && npm run build:frontend",
     "start:backend": "cd backend && npm start",
+    "build:frontend": "cd frontend && npm install && npm run build",
     "start:frontend": "cd frontend && npm start",
+    "build": "npm run build:backend && npm run build:frontend",
     "start": "npm run start:backend & npm run start:frontend"
   },
   "author": "L-Lifbom",
