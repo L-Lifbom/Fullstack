@@ -108,17 +108,17 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--clr-grey-2);
   row-gap: 10px;
   height: 50vh;
   width: 50vw;
+  font-size: 2rem;
 }
 
 .userGamesItem {
-  width: 10vw;
+  width: 25vw;
   display: flex;
   cursor: pointer;
-  margin: 0 0 0 20vw;
+  margin: 0 0 0 10vw;
   list-style-type: none;
 }
 
