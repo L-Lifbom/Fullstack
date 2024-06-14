@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/games', gamesRoutes);
 app.use('/users', usersRoutes);
+
 app.use('/', (req, res) => {
     res.send('Hello World');
 });
